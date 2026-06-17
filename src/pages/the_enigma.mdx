@@ -1,0 +1,46 @@
+---
+title: "Historical Computing (Cryptography): The Enigma Machine"
+description: "An interactive exploration of the WW2 Enigma cipher architecture."
+---
+
+import EnigmaSimulator from '../components/EnigmaSimulator.jsx';
+
+# Historical Cryptography: The Enigma Machine
+
+During WW2, Germany had the “Enigma Machine”. It was a cipher device used to encode strategic military messages. The allies thought it to be indecipherable which severely hindered Allies’ efforts. Fortunately for them, the Enigma code was first broken by the Poles using the Bombe, under the leadership of mathematician Marian Rejewski, in the early 1930s.
+
+---
+
+## The Technical Architecture
+
+## Tech Stack Plan
+
+### Enigma
+
+Users will interact with a simplified Enigma-like machine. The interactive parts of the machine will be the 26-button keyboard and the rotors.
+
+The machine operates as a basic finite-state substitution cipher. It maps an input character from a 26-letter alphabet to an output character through a series of permutations.
+
+* **The Rotor (R)** will be represented by an array size 26 containing a randomized permutation of the alphabet.
+* **The State (s)**  is an integer variable representing the current rotational position of the machine.
+* **The Reflector (T)** is a hardcoded key-value dictionary that consists of disjoint transpositions wherein it is guaranteed that no character maps to itself.
+
+---
+
+## Proposed Interactive Element
+
+To entice students, a challenge will be introduced. Students will have to learn through guided simulations in order to solve the challenge.
+
+### Challenge 1: The Changing Wiring
+
+The first part consists of typing “AAAAAA” for students to deduce that the wiring changes.
+
+### Challenge 2: The Two-Way Street
+
+The second task would ask the user to type a word, copy the scrambled output, reset the starting state, and paste the output back in. This is where the students find out that the encryption and decryption states are a two-way street.
+
+### Final Challenge: The Intercept
+
+Finally, the challenge would play out as if we were Allies encrypting a message from Nazi Germany. We would tell the user that we intercepted XQMP and the student is tasked with finding the state and deciphering the message to relay back to headquarters.
+
+<EnigmaSimulator client:load />
