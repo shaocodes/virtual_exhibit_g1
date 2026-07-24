@@ -300,8 +300,23 @@ export default function EnigmaSimulator() {
           <div className="enigma-machine">
             <div className="enigma-rotor-area">
               <span className="enigma-rotor-label">Rotor</span>
-              <div className="enigma-rotor-window">
-                {String(rotorState).padStart(2, "0")}
+              <div className="enigma-rotor-drum">
+                <div className="enigma-rotor-shade top"></div>
+                <div className="enigma-rotor-letters" style={{ transform: `translateY(${-rotorState * 40}px)` }}>
+                  {ALPHABET.split("").map((letter, i) => {
+                    const prev = ALPHABET[(i - 1 + 26) % 26];
+                    const next = ALPHABET[(i + 1) % 26];
+                    return (
+                      <div className="enigma-rotor-slot" key={i}>
+                        <span className="enigma-rotor-notch">{prev}</span>
+                        <span className="enigma-rotor-current">{letter}</span>
+                        <span className="enigma-rotor-notch">{next}</span>
+                      </div>
+                    );
+                  })}
+                </div>
+                <div className="enigma-rotor-shade bottom"></div>
+                <div className="enigma-rotor-indicator"></div>
               </div>
             </div>
 

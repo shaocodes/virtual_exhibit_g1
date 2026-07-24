@@ -512,6 +512,7 @@ footer {
   display: flex;
   align-items: center;
   gap: 1rem;
+  justify-content: center;
 }
 
 .enigma-rotor-label {
@@ -521,24 +522,83 @@ footer {
   color: #6a6a6a;
 }
 
-.enigma-rotor-window {
-  width: 80px;
-  height: 56px;
+.enigma-rotor-drum {
+  position: relative;
+  width: 100px;
+  height: 120px;
+  overflow: hidden;
   border: 3px solid #c9a84c;
-  border-radius: 8px;
-  background: #0a0e14;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #060a10, #0e1420, #060a10);
+  box-shadow:
+    inset 0 0 20px rgba(0, 0, 0, 0.7),
+    0 0 15px rgba(201, 168, 76, 0.1);
+}
+
+.enigma-rotor-letters {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  padding-top: 40px;
+}
+
+.enigma-rotor-slot {
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.enigma-rotor-current {
   font-family: "Courier New", monospace;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 700;
   color: #f0c040;
-  text-shadow: 0 0 10px rgba(240, 192, 64, 0.4);
-  box-shadow:
-    inset 0 2px 4px rgba(0, 0, 0, 0.5),
-    0 0 15px rgba(201, 168, 76, 0.1);
-  transition: all 0.15s ease;
+  text-shadow: 0 0 10px rgba(240, 192, 64, 0.5);
+  width: 30px;
+  text-align: center;
+}
+
+.enigma-rotor-notch {
+  font-family: "Courier New", monospace;
+  font-size: 0.75rem;
+  color: #4a4a4a;
+  width: 16px;
+  text-align: center;
+}
+
+.enigma-rotor-shade {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 40px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.enigma-rotor-shade.top {
+  top: 0;
+  background: linear-gradient(180deg, #060a10 20%, transparent);
+}
+
+.enigma-rotor-shade.bottom {
+  bottom: 0;
+  background: linear-gradient(0deg, #060a10 20%, transparent);
+}
+
+.enigma-rotor-indicator {
+  position: absolute;
+  top: 50%;
+  left: 4px;
+  right: 4px;
+  height: 38px;
+  transform: translateY(-50%);
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  border-radius: 4px;
+  pointer-events: none;
+  z-index: 3;
 }
 
 .enigma-lampboard {
@@ -877,6 +937,7 @@ footer {
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
+
 
 .enigma-saved-value {
   font-family: "Courier New", monospace;
