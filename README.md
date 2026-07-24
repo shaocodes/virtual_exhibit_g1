@@ -95,6 +95,14 @@ To entice students, a challenge will be introduced. Students will have to learn 
   succeeds before deploying, since some MDX/JSX issues only surface at build
   time and not in the dev server.
 
+### [07/22/26] - Improved the overall ui
+- Refined the overall visual design for a cleaner and more consistent interface.
+- Improved layout spacing, alignment, and typography across the exhibit.
+- Enhanced the styling of interactive components for better usability.
+- Updated the color palette and component styling to improve readability and accessibility.
+- Polished the simulator interface with improved progress indicators, challenge cards, and success overlays.
+- Applied consistent styling across all exhibit sections for a more cohesive user experience.
+
 ---
 
 ## 4. Credits / Sources
