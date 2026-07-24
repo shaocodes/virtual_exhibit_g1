@@ -80,7 +80,6 @@ export default function EnigmaDiagram() {
 
         <label>
           <span className="enigma-diagram-state-label">State: </span>
-          <span className="enigma-diagram-state-value">{state} </span>
           <select
             className="enigma-diagram-select"
             value={state}
