@@ -112,3 +112,6 @@ section at the bottom of `linux.mdx`. Historical claims about the Enigma
 machine and its codebreaking are sourced in the References section at the
 bottom of `the_enigma.mdx`. No AI-generated images or third-party code
 libraries beyond what's declared in `package.json` were used.
+
+## 5. Disclosure on the use of AI/LLM
+No aritificial intelligence (AI) or large language model (LLM) tools were used in the development, writing, design, implementation of this project
